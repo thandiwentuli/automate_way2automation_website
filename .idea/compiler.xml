@@ -9,8 +9,5 @@
         <module name="automate_way2automation_website" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="automate_way2automation_website" target="21" />
-    </bytecodeTargetLevel>
   </component>
 </project>
