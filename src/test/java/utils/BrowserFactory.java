@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class BrowserFactory {
+
     public static WebDriver driver;
 
     public static WebDriver startBrowser(String browserChoice, String url) {
@@ -31,5 +32,4 @@ public class BrowserFactory {
         driver.get(url);
         return driver;
     }
-
 }
