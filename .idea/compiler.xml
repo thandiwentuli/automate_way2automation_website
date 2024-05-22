@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="automate_way2automation_website" />
+        <module name="CombinedGroupCucumber" />
       </profile>
     </annotationProcessing>
   </component>
