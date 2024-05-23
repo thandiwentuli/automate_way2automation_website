@@ -10,6 +10,7 @@ Feature: Customer initial deposit
     And User Clicks on Account Dropdown List
     And Selects Account number
     Then User verifies account balance
+
 #  Scenario: Login as a Customer
 #    Given the User is on the homepage "http://www.way2automation.com/angularjs-protractor/banking/#/login"
 #    When the User Clicks the Customer Login Button

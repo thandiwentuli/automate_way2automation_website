@@ -22,7 +22,6 @@ public class LoginSteps extends Base {
     @When("the User Clicks the Customer Login Button")
     public void the_user_clicks_the_customer_login_button() {
         login.clickCustomerLoginButton();
-
     }
 
     @And("the User Clicks Dropdown List")
@@ -30,7 +29,6 @@ public class LoginSteps extends Base {
         customerPage.initialize();
         customerPage.verifyYourNameText();
         customerPage.clickCustomerDropDown();
-
     }
 
     @Then("the User Selects <yourName>")

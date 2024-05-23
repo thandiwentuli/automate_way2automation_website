@@ -30,6 +30,7 @@ public class BrowserFactory {
         }
         driver.manage().window().maximize();
         driver.get(url);
+        driver.manage().deleteAllCookies();
         return driver;
     }
 }
