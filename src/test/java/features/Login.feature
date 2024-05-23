@@ -1,7 +1,7 @@
 Feature: Customer initial deposit
 
   Scenario: Clear Account Balance status
-    Given the User is on the homepage "http://www.way2automation.com/angularjs-protractor/banking/#/login"
+    Given the User is on the homepage
     When the User Clicks the Customer Login Button
     And the User Clicks Dropdown List
     Then the User Selects <yourName>
