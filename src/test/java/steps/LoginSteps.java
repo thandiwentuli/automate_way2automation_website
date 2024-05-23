@@ -1,10 +1,16 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginSteps {
+
+    WebDriver driver;
 
     @Given("the User is on the homepage {string}")
     public void the_user_is_on_the_homepage(String string) {
@@ -12,9 +18,11 @@ public class LoginSteps {
 
     @When("the User Clicks the Customer Login Button")
     public void the_user_clicks_the_customer_login_button() {
+
     }
-    @When("the User Clicks Dropdown List")
+    @And("the User Clicks Dropdown List")
     public void the_user_clicks_dropdown_list() {
+
     }
     @Then("the User Selects <yourName>")
     public void the_user_selects_your_name() {
