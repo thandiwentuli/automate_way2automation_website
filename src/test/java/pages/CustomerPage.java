@@ -23,7 +23,6 @@ public class CustomerPage {
     @FindBy(xpath = "//select[@name='userSelect']")
     WebElement customerDropDown;
 
-
     public CustomerPage(WebDriver driver) {
         this.driver = driver;
     }

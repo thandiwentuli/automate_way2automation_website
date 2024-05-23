@@ -4,15 +4,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import utils.Base;
 
 public class LoginSteps extends Base {
-
-
-    WebDriver driver;
 
     @Given("the User is on the homepage")
     public void the_user_is_on_the_homepage() {
