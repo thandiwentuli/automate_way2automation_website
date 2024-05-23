@@ -27,6 +27,9 @@ public class LoginSteps extends Base {
 
     @And("the User Clicks Dropdown List")
     public void the_user_clicks_dropdown_list() {
+        customerPage.initialize();
+        customerPage.verifyYourNameText();
+        customerPage.clickCustomerDropDown();
 
     }
 
