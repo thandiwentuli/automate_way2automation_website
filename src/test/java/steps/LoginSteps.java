@@ -25,7 +25,7 @@ public class LoginSteps extends Base {
         customerPage.clickCustomerDropDown();
     }
 
-    @Then("the User Selects <yourName>")
+    @Then("the User Selects A Username")
     public void the_user_selects_your_name() {
         customerPage.selectCustomer(2);
     }
@@ -35,9 +35,10 @@ public class LoginSteps extends Base {
         customerPage.clickLoginBtn();
     }
 
-    @Then("Welcome <yourName> !! message is displayed")
-    public void welcome_your_name_message_is_displayed() {
-
+    @Then("^Welcome (.*)$")
+    public void welcome_your_name_message_is_displayed(String customer) {
+        accountPage.waitForElements();
+        accountPage.verifyLoggedInUser(customer);
     }
 
     @Then("User Clicks on Account Dropdown List")
