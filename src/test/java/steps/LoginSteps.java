@@ -27,14 +27,17 @@ public class LoginSteps extends Base {
 
     @Then("the User Selects <yourName>")
     public void the_user_selects_your_name() {
+        customerPage.selectCustomer(2);
     }
 
     @Then("the User Clicks on Login Button")
     public void the_user_clicks_on_login_button() {
+        customerPage.clickLoginBtn();
     }
 
     @Then("Welcome <yourName> !! message is displayed")
     public void welcome_your_name_message_is_displayed() {
+
     }
 
     @Then("User Clicks on Account Dropdown List")

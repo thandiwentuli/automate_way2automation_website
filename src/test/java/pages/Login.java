@@ -15,7 +15,6 @@ public class Login {
 
     public Login(WebDriver driver) {
         this.driver = driver;
-
     }
 
     public void verifyCustomerLogin() {
@@ -24,7 +23,6 @@ public class Login {
     }
 
     public void clickCustomerLoginButton() {
-
         customerLogin_xpath.click();
     }
 

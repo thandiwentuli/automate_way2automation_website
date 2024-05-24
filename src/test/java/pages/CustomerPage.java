@@ -6,12 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.List;
 
 public class CustomerPage {
 
@@ -22,6 +20,9 @@ public class CustomerPage {
 
     @FindBy(xpath = "//select[@name='userSelect']")
     WebElement customerDropDown;
+
+    @FindBy(xpath = "//button[@class='btn btn-default'][contains(.,'Login')]")
+    WebElement loginBtn;
 
     public CustomerPage(WebDriver driver) {
         this.driver = driver;
@@ -57,5 +58,23 @@ public class CustomerPage {
             throw new NullArgumentException("customerDropDown variable is null!" );
 
         customerDropDown.click();
+    }
+
+    public void selectCustomer(int customerIndex){
+        if(customerDropDown == null)
+            throw new NullArgumentException("customerDropDown variable is null!" );
+
+        var customerList = customerDropDown.findElements(By.tagName("option"));
+
+        if(customerIndex < 1 || customerIndex > customerList.size() ) {
+            customerList.get(0).click();
+            return;
+        }
+
+        customerList.get(customerIndex).click();
+    }
+
+    public void clickLoginBtn(){
+        loginBtn.click();
     }
 }
