@@ -47,11 +47,16 @@ public class LoginSteps extends Base {
     }
 
     @Then("Selects Account number")
-    public void selects_account_number() {
+    public void selects_account_number() throws InterruptedException {
         accountPage.checkBalance("0");
     }
 
     @Then("User verifies account balance")
     public void user_verifies_account_balance() {
+    }
+
+    @And("User logout")
+    public void userLogout() {
+        accountPage.clickLogoutButton();
     }
 }
