@@ -1,14 +1,18 @@
 package pages;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.SelectorDocument;
+import org.jsoup.select.Selector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class AccountPage {
 
@@ -59,5 +63,37 @@ public class AccountPage {
         var user = span.getText();
 
         Assert.assertEquals(customer, user);
+    }
+
+    public void selectAcc()
+    {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[contains(@name,'accountSelect')]")));
+
+        Select accountList = new Select(dropdown);
+
+        accountList.selectByVisibleText("1004");
+        List<WebElement> allOptions = accountList.getOptions();
+
+        String option = "1004";
+
+// Iterate the list using for loop
+
+        for (WebElement allOption : allOptions) {
+
+            if (allOption.getText().contains(option)) {
+
+                allOption.click();
+
+                System.out.println("Selected " + "  " + allOption.getText());
+
+                break;
+
+            }
+
+        }
+
+
+
     }
 }

@@ -43,6 +43,7 @@ public class LoginSteps extends Base {
 
     @Then("User Clicks on Account Dropdown List")
     public void user_clicks_on_account_dropdown_list() {
+        accountPage.selectAcc();
     }
 
     @Then("Selects Account number")

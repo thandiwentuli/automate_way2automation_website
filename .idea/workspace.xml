@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f54a86b8-6936-4507-9514-9264d3f0f1c2" name="Changes" comment="Added POM file">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/Login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Base.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,24 +61,24 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.Feature: Login (1).executor": "Run",
-    "Cucumber Java.Feature: Login (2).executor": "Run",
-    "Cucumber Java.Feature: Login.executor": "Run",
-    "Cucumber Java.Scenario: Clear Account Balance status.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Pro-Music/AutomationTesting/CucumberCombinedGroup",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.Feature: Login (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Login (2).executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Login.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Clear Account Balance status.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pro-Music/AutomationTesting/CucumberCombinedGroup&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cucumber Java.Feature: Login">
     <configuration name="Feature: Login (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
