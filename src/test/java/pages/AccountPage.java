@@ -29,18 +29,25 @@ public class AccountPage {
 
     @FindBy(xpath = "//select[contains(@name,'accountSelect')]")
     WebElement accountList;
+
     @FindBy(xpath = "//input[@ng-model='amount']")
     WebElement depositamount;
+
     @FindBy(xpath = "//button[contains(.,'Reset')]")
     WebElement resetBtn;
+
     @FindBy(xpath = "//button[contains(.,'Back')]")
     WebElement backBtn;
+
     @FindBy(xpath = "//span[contains(.,'Deposit Successful')]")
     WebElement successfulDeposit;
+
     @FindBy(xpath = "//button[@type='submit'][contains(.,'Deposit')]")
     WebElement depositBtn;
+
     @FindBy(xpath = "//button[contains(.,'Logout')]")
     WebElement logout;
+
     public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -126,30 +133,20 @@ public class AccountPage {
             transactionBtn.click();
             resetBtn.click();
             backBtn.click();
-            deposit.click();
-            setDepositamount("1500");
-
-        } else {
-            deposit.click();
-            setDepositamount("1500");
-
         }
 
+        deposit.click();
+        setDepositamount("1500");
     }
 
     public void setDepositamount(String depositamo) throws InterruptedException {
-        Thread.sleep(1000);
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfAllElements(depositamount));
         depositamount.sendKeys(depositamo);
         depositBtn.click();
         Assert.assertEquals("Deposit Successful",successfulDeposit.getText());
-
-
     }
     public void clickLogoutButton(){
-
         logout.click();
     }
-
-
 }
 
