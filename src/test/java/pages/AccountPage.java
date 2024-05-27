@@ -29,35 +29,44 @@ public class AccountPage {
 
     @FindBy(xpath = "//select[contains(@name,'accountSelect')]")
     WebElement accountList;
-
-    public AccountPage(WebDriver driver){
+    @FindBy(xpath = "//input[contains(@placeholder,'amount')]")
+    WebElement depositamount;
+    @FindBy(xpath = "//button[contains(.,'Reset')]")
+    WebElement resetBtn;
+    @FindBy(xpath = "//button[contains(.,'Back')]")
+    WebElement backBtn;
+    @FindBy(xpath = "//span[contains(.,'Deposit Successful')]")
+    WebElement successfulDeposit;
+    @FindBy(xpath = "//button[@type='submit'][contains(.,'Deposit')]")
+    WebElement depositBtn;
+    public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void waitForElements(){
+    public void waitForElements() {
         new WebDriverWait(driver, Duration.ofSeconds(30))
                 .until(ExpectedConditions.visibilityOfAllElements(transactionBtn, deposit, withdrawalBtn, accountList));
     }
 
-    public void verifyLoggedInUser(String customer){
+    public void verifyLoggedInUser(String customer) {
         var container = driver.findElement(By.className("borderM"));
 
-        if(container == null)
+        if (container == null)
             return;
 
         var div = container.findElement(By.tagName("div"));
 
-        if(div == null)
+        if (div == null)
             return;
 
         var strong = div.findElement(By.tagName("strong"));
 
-        if(strong == null)
+        if (strong == null)
             return;
 
         var span = div.findElement(By.tagName("span"));
 
-        if(span == null)
+        if (span == null)
             return;
 
         var user = span.getText();
@@ -92,29 +101,47 @@ public class AccountPage {
 
         }
     }
-        public void checkBalance(String balance){
+
+    public void checkBalance(String balance) {
         var container = driver.findElement(By.className("borderM"));
 
-        if(container == null)
+        if (container == null)
             return;
 
         var div = container.findElements(By.tagName("div"));
 
-        if(div == null)
+        if (div == null)
             return;
 
         var strong = div.get(1).findElements(By.tagName("strong"));
 
-        if(strong == null)
+        if (strong == null)
             return;
 
-        var balanceacc = strong.get(1).getText();
+        var balanceAcc = Integer.parseInt(strong.get(1).getText());
 
+        if (balanceAcc > 0) {
+            transactionBtn.click();
+            resetBtn.click();
+            backBtn.click();
+            deposit.click();
+            setDepositamount("1500");
 
+        } else {
+            deposit.click();
+            setDepositamount("1500");
 
-        Assert.assertEquals(balanceacc, "0");
+        }
+
+    }
+
+    public void setDepositamount(String depositamo) {
+        depositamount.sendKeys(depositamo);
+        depositBtn.click();
+        Assert.assertEquals("Deposit Successful",successfulDeposit.getText());
+
     }
 
 
-    }
+}
 

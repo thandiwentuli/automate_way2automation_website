@@ -7,7 +7,7 @@
     <list default="true" id="f54a86b8-6936-4507-9514-9264d3f0f1c2" name="Changes" comment="Added the select account method selectAcc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Base.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cucumber Java.Feature: Login">
+  <component name="RunManager" selected="Cucumber Java.Feature: Login (1)">
     <configuration name="Feature: Login (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/Login.feature" />
@@ -143,9 +143,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: Login (1)" />
         <item itemvalue="Cucumber Java.Feature: Login" />
         <item itemvalue="Cucumber Java.Scenario: Clear Account Balance status" />
-        <item itemvalue="Cucumber Java.Feature: Login (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -228,6 +228,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added the select account method selectAcc" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/pages/AccountPage.java</url>
+          <line>137</line>
+          <properties class="pages.AccountPage" method="setDepositamount">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CucumberJavaRunConfigurationType">
         <watch expression="balanceacc" />
