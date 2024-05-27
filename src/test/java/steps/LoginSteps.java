@@ -48,6 +48,7 @@ public class LoginSteps extends Base {
 
     @Then("Selects Account number")
     public void selects_account_number() {
+        accountPage.checkBalance("0");
     }
 
     @Then("User verifies account balance")

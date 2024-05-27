@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f54a86b8-6936-4507-9514-9264d3f0f1c2" name="Changes" comment="Added POM file">
+    <list default="true" id="f54a86b8-6936-4507-9514-9264d3f0f1c2" name="Changes" comment="Added the select account method selectAcc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/LoginSteps.java" afterDir="false" />
@@ -45,6 +45,9 @@
     &quot;accountId&quot;: &quot;91c82452-30a4-46de-aa1d-8cf0c6954692&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-java/7.17.0/cucumber-java-7.17.0.jar!/io/cucumber/java/Invoker.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -195,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716493048385</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added the select account method selectAcc">
+      <created>1716828342766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716828342767</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +223,15 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added POM file" />
     <MESSAGE value="Fixed CustomerPage logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed CustomerPage logic" />
+    <MESSAGE value="Added the select account method" />
+    <MESSAGE value="Added the select account method selectAcc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the select account method selectAcc" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CucumberJavaRunConfigurationType">
+        <watch expression="balanceacc" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

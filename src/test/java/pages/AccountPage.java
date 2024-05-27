@@ -65,8 +65,7 @@ public class AccountPage {
         Assert.assertEquals(customer, user);
     }
 
-    public void selectAcc()
-    {
+    public void selectAcc() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[contains(@name,'accountSelect')]")));
 
@@ -92,8 +91,30 @@ public class AccountPage {
             }
 
         }
+    }
+        public void checkBalance(String balance){
+        var container = driver.findElement(By.className("borderM"));
 
+        if(container == null)
+            return;
+
+        var div = container.findElements(By.tagName("div"));
+
+        if(div == null)
+            return;
+
+        var strong = div.get(1).findElements(By.tagName("strong"));
+
+        if(strong == null)
+            return;
+
+        var balanceacc = strong.get(1).getText();
+
+
+
+        Assert.assertEquals(balanceacc, "0");
+    }
 
 
     }
-}
+
