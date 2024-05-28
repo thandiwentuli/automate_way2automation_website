@@ -6,14 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import utils.Base;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CustomerPage {
 
-    WebDriver driver;
+    static WebDriver driver;
 
     @FindBy(xpath = "//label[contains(.,'Your Name :')]")
     WebElement yourNameText;
@@ -25,7 +28,7 @@ public class CustomerPage {
     WebElement loginBtn;
 
     public CustomerPage(WebDriver driver) {
-        this.driver = driver;
+        CustomerPage.driver = driver;
     }
 
     public void initialize() {
@@ -72,6 +75,35 @@ public class CustomerPage {
         }
 
         customerList.get(customerIndex).click();
+    }
+
+    public void click_yourName_dropDownList(String customerYourName){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[contains(@id,'userSelect')]")));
+//        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.(customerDropDown));
+
+        Select selectYourName = new Select(dropdown);
+
+        selectYourName.selectByVisibleText("---Your Name---");
+        List<WebElement> allOptions = selectYourName.getOptions();
+
+//        String customerYourName = "Harry Potter";
+
+        // Iterate the list using for loop
+
+        for (WebElement allOption : allOptions) {
+
+            if (allOption.getText().contains(customerYourName)) {
+
+                allOption.click();
+
+                System.out.println("clicked" + customerYourName);
+
+                break;
+
+            }
+
+        }
     }
 
     public void clickLoginBtn(){
