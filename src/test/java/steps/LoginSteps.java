@@ -1,10 +1,16 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.CustomerPage;
 import utils.Base;
+
+import java.util.List;
+import java.util.Map;
 
 public class LoginSteps extends Base {
 
@@ -25,9 +31,16 @@ public class LoginSteps extends Base {
         customerPage.clickCustomerDropDown();
     }
 
-    @Then("the User Selects A Username")
-    public void the_user_selects_your_name() {
-        customerPage.selectCustomer(2);
+//    @Then("the User Selects A Username")
+//    public void the_user_selects_your_name() {
+//        customerPage.selectCustomer(3);
+//        //customerPage.click_yourName_dropDownList("Ron Weasly");
+//    }
+
+    @And("the User Selects A Username {string}")
+    public void theUserSelectsAUsername(String customerYourName) {
+        //customerPage.selectCustomer(2);
+        customerPage.click_yourName_dropDownList(customerYourName);
     }
 
     @Then("the User Clicks on Login Button")
@@ -41,9 +54,14 @@ public class LoginSteps extends Base {
         accountPage.verifyLoggedInUser(customer);
     }
 
-    @Then("User Clicks on Account Dropdown List")
-    public void user_clicks_on_account_dropdown_list() {
-        accountPage.selectAcc();
+//    @Then("User Clicks on Account Dropdown List")
+//    public void user_clicks_on_account_dropdown_list() {
+//        accountPage.selectAcc();
+//    }
+
+    @Then("User Clicks on Account {string} on Dropdown List")
+    public void userClicksOnAccountOnDropdownList(String arg0) {
+        accountPage.selectAcc(arg0);
     }
 
     @Then("Selects Account number")
@@ -58,5 +76,27 @@ public class LoginSteps extends Base {
     @And("User logout")
     public void userLogout() {
         accountPage.clickLogoutButton();
+    }
+
+
+    @And("User deposits into accounts")
+    public void userDepositsIntoMultpleAccounts(DataTable dataTable) throws InterruptedException {
+        List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
+
+        for (Map<String, String> row : rows) {
+            String accountNumber = row.get("AccountNumber");
+            String depositAmount = row.get("DepositAmount");
+
+            //select account account number
+            accountPage.selectAcc(accountNumber);
+
+            accountPage.click_depositButton();
+
+            //deposit amount
+            accountPage.checkBalance("0",depositAmount);
+
+            accountPage.click_finalDepositButton();
+
+        }
     }
 }

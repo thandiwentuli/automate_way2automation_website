@@ -4,17 +4,38 @@ Feature: Customer initial deposit
     Given the User is on the homepage
     And the User Clicks the Customer Login Button
     Then the User Clicks Dropdown List
-    And the User Selects A Username
+#   And the User Selects A Username
+    And the User Selects A Username "Ron Weasly"
     Then the User Clicks on Login Button
     And Welcome <your_name>
-    Then User Clicks on Account Dropdown List
-    And Selects Account number
-    Then User verifies account balance
+    And User deposits into accounts
+      | AccountNumber | DepositAmount |
+      | 1007          | 1500          |
+
+#    Then User Clicks on Account Dropdown List
+#    And Selects Account number
+#    Then User verifies account balance
     And User logout
     Examples:
-      | your_name     |
-      | Harry Potter  |
+      | your_name  |
+      | Ron Weasly |
 
+  Scenario Outline: Multi Deposits
+    Given the User is on the homepage
+    And the User Clicks the Customer Login Button
+    Then the User Clicks Dropdown List
+    And the User Selects A Username "Ron Weasly"
+    Then the User Clicks on Login Button
+    And Welcome <your_name>
+    And User deposits into accounts
+      | AccountNumber | DepositAmount |
+      | 1007          | 1500          |
+      | 1008          | 1500          |
+      | 1009          | 1500          |
+    And User logout
+    Examples:
+      | your_name  |
+      | Ron Weasly |
 #  Scenario: Login as a Customer
 #    Given the User is on the homepage "http://www.way2automation.com/angularjs-protractor/banking/#/login"
 #    When the User Clicks the Customer Login Button
