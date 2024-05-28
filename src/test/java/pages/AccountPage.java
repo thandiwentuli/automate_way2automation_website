@@ -24,19 +24,27 @@ public class AccountPage {
     @FindBy(xpath = "//button[@ng-class='btnClass2'][contains(.,'Deposit')]")
     WebElement deposit;
 
-    @FindBy(xpath = "//button[@ng-class='btnClass2'][contains(.,'Deposit')]")
+    @FindBy(xpath = "//button[@ng-class='btnClass3'][contains(.,'Withdrawl')]")
     WebElement withdrawalBtn;
+
+    @FindBy(xpath = "//button[@type='submit'][contains(.,'Withdraw')]")
+    WebElement processWithdrawButton;
 
     @FindBy(xpath = "//select[contains(@name,'accountSelect')]")
     WebElement accountList;
+
     @FindBy(xpath = "//input[@ng-model='amount']")
     WebElement depositamount;
+
     @FindBy(xpath = "//button[contains(.,'Reset')]")
     WebElement resetBtn;
+
     @FindBy(xpath = "//button[contains(.,'Back')]")
     WebElement backBtn;
+
     @FindBy(xpath = "//span[contains(.,'Deposit Successful')]")
     WebElement successfulDeposit;
+
     @FindBy(xpath = "//button[@type='submit'][contains(.,'Deposit')]")
     WebElement depositBtn;
     @FindBy(xpath = "//button[contains(.,'Logout')]")
@@ -82,47 +90,14 @@ public class AccountPage {
         Assert.assertEquals(customer, user);
     }
 
-    public void selectAcc() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[contains(@name,'accountSelect')]")));
-
-        Select accountList = new Select(dropdown);
-
-        accountList.selectByVisibleText("1004");
-
-        List<WebElement> allOptions = accountList.getOptions();
-
-        String option = "1004";
-
-// Iterate the list using for loop
-
-        for (WebElement allOption : allOptions) {
-
-            if (allOption.getText().contains(option)) {
-
-                allOption.click();
-
-                System.out.println("Selected " + "  " + allOption.getText());
-
-                break;
-
-            }
-
-        }
-    }
     public void selectAcc(String AccountNumber) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[contains(@name,'accountSelect')]")));
-
         Select accountList = new Select(dropdown);
-
         accountList.selectByVisibleText(AccountNumber);
-
         List<WebElement> allOptions = accountList.getOptions();
 
-
-// Iterate the list using for loop
-
+        // Iterate the list using for loop
         for (WebElement allOption : allOptions) {
 
             if (allOption.getText().contains(AccountNumber)) {
@@ -132,31 +107,16 @@ public class AccountPage {
                 System.out.println("Selected " + "  " + allOption.getText());
 
                 break;
-
             }
-
         }
     }
 
     public void click_depositButton(){
         driver.findElement(By.xpath(deposit_button_xpath)).click();
-    }public void click_finalDepositButton(){
+    }
+
+    public void click_finalDepositButton(){
         driver.findElement(By.xpath(final_deposit_button_xpath)).click();
-    }
-    public static void click_transactionsButton(){
-        driver.findElement(By.xpath(transaction_button_xpath)).click();
-
-    }
-
-
-
-
-    public void populateAmount(String Amount) throws InterruptedException {
-        Thread.sleep(2000);
-
-        WebElement inputsend = driver.findElement(By.cssSelector("input[placeholder='amount']"));
-        inputsend.sendKeys(Amount);
-        System.out.println(inputsend);
     }
 
     public void checkBalance(String balance) throws InterruptedException {
@@ -191,6 +151,7 @@ public class AccountPage {
         }
 
     }
+
     public void checkBalance(String balance, String depositBalance) throws InterruptedException {
         var container = driver.findElement(By.className("borderM"));
 
@@ -213,15 +174,9 @@ public class AccountPage {
             transactionBtn.click();
             resetBtn.click();
             backBtn.click();
-            deposit.click();
-            setDepositamount(depositBalance);
-
-        } else {
-            deposit.click();
-            setDepositamount(depositBalance);
-
         }
-
+        deposit.click();
+        setDepositamount(depositBalance);
     }
 
     public void setDepositamount(String depositamo) throws InterruptedException {
@@ -229,14 +184,41 @@ public class AccountPage {
         depositamount.sendKeys(depositamo);
         depositBtn.click();
         Assert.assertEquals("Deposit Successful",successfulDeposit.getText());
-
-
     }
-    public void clickLogoutButton(){
 
+    public void performWithdrawal(String withdrawalAmount) throws InterruptedException {
+        Thread.sleep(1000);
+        depositamount.sendKeys(withdrawalAmount);
+        Assert.assertEquals("Withdrawal Successful",successfulDeposit.getText());
+    }
+
+    public void clickPerformWithdrawButton() {
+        processWithdrawButton.click();
+    }
+
+    public void openTransactions(){
+        transactionBtn.click();
+        try{
+            Thread.sleep(2000);
+        }catch (Exception x){
+            System.out.println(x.getMessage());
+        }
+    }
+
+    public void clickBackBtn(){
+        backBtn.click();
+    }
+
+    public void validateTransactions(){
+        //capture screenshots here...
+    }
+
+    public void clickWithdrawalButton(){
+        withdrawalBtn.click();
+    }
+
+    public void clickLogoutButton(){
         logout.click();
     }
-
-
 }
 

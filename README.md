@@ -112,7 +112,7 @@ Our testing framework utilizes the following tools:
                 <version>3.0.0-M5</version>
                 <configuration>
                     <includes>
-                        <include>Runners.runner</include>
+                        <include>Runners.TestRunner</include>
                     </includes>
                 </configuration>
             </plugin>
