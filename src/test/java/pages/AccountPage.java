@@ -24,7 +24,7 @@ public class AccountPage {
     @FindBy(xpath = "//button[@ng-class='btnClass2'][contains(.,'Deposit')]")
     WebElement deposit;
 
-    @FindBy(xpath = "//button[@ng-class='btnClass3'][contains(.,'Withdrawl')]")
+    @FindBy(xpath = "//button[@ng-class='btnClass2'][contains(.,'Deposit')]")
     WebElement withdrawalBtn;
 
     @FindBy(xpath = "//select[contains(@name,'accountSelect')]")
@@ -230,10 +230,6 @@ public class AccountPage {
         depositBtn.click();
         Assert.assertEquals("Deposit Successful",successfulDeposit.getText());
 
-
-    }
-    public void clickWithdrawalButton(){
-        withdrawalBtn.click();
 
     }
     public void clickLogoutButton(){

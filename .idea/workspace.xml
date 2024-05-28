@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f54a86b8-6936-4507-9514-9264d3f0f1c2" name="Changes" comment="Added setDepositamount and addeded account validation">
+      <change afterPath="$PROJECT_DIR$/src/test/java/runner/runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/cucumber.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/extent.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/Tshego" />
+    <option name="BRANCH" value="origin/NomaGroupWIP" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -63,34 +66,40 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cucumber Java.Feature: Login (1).executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Login (2).executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: Login.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Clear Account Balance status.executor&quot;: &quot;Debug&quot;,
-    &quot;Cucumber Java.Scenario: Multi Deposits.executor&quot;: &quot;Debug&quot;,
-    &quot;Cucumber Java.Scenario: Test 3.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pro-Music/AutomationTesting/CucumberCombinedGroup&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Feature: Login (1).executor": "Run",
+    "Cucumber Java.Feature: Login (2).executor": "Run",
+    "Cucumber Java.Feature: Login.executor": "Run",
+    "Cucumber Java.Scenario: Clear Account Balance status.executor": "Debug",
+    "Cucumber Java.Scenario: Multi Deposits.executor": "Debug",
+    "Cucumber Java.Scenario: Test 3.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.runner.executor": "Run",
+    "git-widget-placeholder": "NomaGroupWIP",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Automation/automate_way2automation_website/src/test/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
-  <component name="RunManager" selected="Cucumber Java.Feature: Login">
-    <configuration name="Feature: Login (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Automation\automate_way2automation_website\src\test\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.runner">
+    <configuration name="Feature: Login (2)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/Login.feature" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CombinedGroupCucumber" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <shortenClasspath name="NONE" />
       <option name="SUGGESTED_NAME" value="Feature: Login" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
@@ -142,26 +151,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Multi Deposits" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/Login.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="automate_way2automation_website" />
-      <option name="NAME_FILTER" value="^Multi Deposits$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Multi Deposits$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Multi Deposits" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Scenario: Test 3" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/Login.feature" />
@@ -182,13 +171,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="runner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="CombinedGroupCucumber" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Runners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Runners" />
+      <option name="MAIN_CLASS_NAME" value="Runners.runner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.runner" />
+        <item itemvalue="Cucumber Java.Feature: Login (2)" />
         <item itemvalue="Cucumber Java.Feature: Login" />
         <item itemvalue="Cucumber Java.Scenario: Test 3" />
         <item itemvalue="Cucumber Java.Scenario: Clear Account Balance status" />
-        <item itemvalue="Cucumber Java.Scenario: Multi Deposits" />
-        <item itemvalue="Cucumber Java.Feature: Login (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716833940363</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Read me file data">
+      <option name="closed" value="true" />
+      <created>1716919466903</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716919466903</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,27 +291,10 @@
     <MESSAGE value="Added the select account method" />
     <MESSAGE value="Added the select account method selectAcc" />
     <MESSAGE value="Added setDepositamount and addeded account validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added setDepositamount and addeded account validation" />
+    <MESSAGE value="Add Read me file data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Read me file data" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/pages/AccountPage.java</url>
-          <line>161</line>
-          <properties class="pages.AccountPage" method="checkBalance">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/steps/LoginSteps.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CucumberJavaRunConfigurationType">
         <watch expression="balanceacc" />
