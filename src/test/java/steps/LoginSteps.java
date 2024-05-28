@@ -99,4 +99,10 @@ public class LoginSteps extends Base {
 
         }
     }
+
+    @And("User clicks the withdrawal Button")
+    public void userClicksTheWithdrawalButton() {
+        accountPage.clickWithdrawalButton();
+
+    }
 }

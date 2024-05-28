@@ -63,19 +63,6 @@ public class CustomerPage {
         customerDropDown.click();
     }
 
-    public void selectCustomer(int customerIndex){
-        if(customerDropDown == null)
-            throw new NullArgumentException("customerDropDown variable is null!" );
-
-        var customerList = customerDropDown.findElements(By.tagName("option"));
-
-        if(customerIndex < 1 || customerIndex > customerList.size() ) {
-            customerList.get(0).click();
-            return;
-        }
-
-        customerList.get(customerIndex).click();
-    }
 
     public void click_yourName_dropDownList(String customerYourName){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
