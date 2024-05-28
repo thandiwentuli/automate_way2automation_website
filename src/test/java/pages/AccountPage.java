@@ -213,10 +213,15 @@ public class AccountPage {
             transactionBtn.click();
             resetBtn.click();
             backBtn.click();
+            deposit.click();
+            setDepositamount(depositBalance);
+
+        } else {
+            deposit.click();
+            setDepositamount(depositBalance);
+
         }
 
-        deposit.click();
-        setDepositamount(depositBalance);
     }
 
     public void setDepositamount(String depositamo) throws InterruptedException {
