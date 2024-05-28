@@ -53,7 +53,7 @@ Feature: Customer initial deposit
 #    Then User Clicks on Account Dropdown List
 #    And Selects Account number
 #    Then User verifies account balance
-    #And User logout
+    And User logout
     Examples:
       | your_name  |
       | Ron Weasly |
