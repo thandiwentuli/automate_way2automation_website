@@ -74,7 +74,7 @@
     "Cucumber Java.Scenario: Test 3.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "NomaGroupWIP",
+    "git-widget-placeholder": "Merging NomaGroupWIP",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Pro-Music/AutomationTesting/CucumberCombinedGroup",
@@ -278,7 +278,8 @@
     <MESSAGE value="Added the select account method" />
     <MESSAGE value="Added the select account method selectAcc" />
     <MESSAGE value="Added setDepositamount and addeded account validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added setDepositamount and addeded account validation" />
+    <MESSAGE value="Added withdrawal function and refactored the code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added withdrawal function and refactored the code." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
