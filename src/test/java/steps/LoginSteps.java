@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.annotations.AfterTest;
 import pages.CustomerPage;
 import utils.Base;
 
@@ -104,5 +105,41 @@ public class LoginSteps extends Base {
     public void userClicksTheWithdrawalButton() {
         accountPage.clickWithdrawalButton();
 
+    }
+
+    @And("User enters withdrawal amount")
+    public void userEntersWithdrawalAmount(DataTable data) {
+        try{
+            List<Map<String, String>> rows = data.asMaps(String.class, String.class);
+
+            for (Map<String, String> row : rows) {
+                String withdrawalAmount = row.get("WithdrawalAmount");
+                accountPage.performWithdrawal(withdrawalAmount);
+            }
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @And("User clicks final withdrawal button")
+    public void userClicksFinalWithdrawalButton() {
+        accountPage.clickPerformWithdrawButton();
+    }
+
+    @Then("Validate that deposit appears under the transaction page")
+    public void validateThatDepositAppearsUnderTheTransactionPage() {
+        accountPage.openTransactions();
+        accountPage.clickBackBtn();
+    }
+
+    @Then("Validate that withdrawal appears under the transaction page")
+    public void validateThatWithdrawalAppearsUnderTheTransactionPage() {
+        accountPage.openTransactions();
+        accountPage.clickBackBtn();
+    }
+
+    @AfterTest
+    public void shutdownBrowser(){
+        driver.quit();
     }
 }
