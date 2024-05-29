@@ -53,3 +53,18 @@ Feature: Customer initial deposit
     Examples:
       | your_name  |
       | Ron Weasly |
+
+  Scenario Outline: Test 4
+    Given the User is on the homepage
+    And the User Clicks the Customer Login Button
+    Then the User Clicks Dropdown List
+    And the User Selects A Username "Ron Weasly"
+    Then the User Clicks on Login Button
+    And Welcome <your_name>
+    And User deposits into accounts
+      | AccountNumber | DepositAmount |
+      | 1007          | 1500          |
+    And User logout
+    Examples:
+      | your_name  |
+      | Ron1 Weasly |

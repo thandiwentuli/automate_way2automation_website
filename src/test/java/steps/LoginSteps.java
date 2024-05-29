@@ -150,7 +150,7 @@ public class LoginSteps extends Base {
         }
     }
 
-    @AfterTest
+    @After
     public void shutdownBrowser() {
         driver.quit();
     }
