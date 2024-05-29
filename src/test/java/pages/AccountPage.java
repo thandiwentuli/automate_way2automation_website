@@ -1,7 +1,5 @@
 package pages;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.SelectorDocument;
-import org.jsoup.select.Selector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +14,7 @@ import java.util.List;
 
 public class AccountPage {
 
-    static WebDriver driver;
+    final WebDriver driver;
 
     @FindBy(xpath = "//button[@ng-class='btnClass1'][contains(.,'Transactions')]")
     WebElement transactionBtn;
@@ -183,13 +181,13 @@ public class AccountPage {
         Thread.sleep(1000);
         depositamount.sendKeys(depositamo);
         depositBtn.click();
-        Assert.assertEquals("Deposit Successful",successfulDeposit.getText());
+        Assert.assertEquals(successfulDeposit.getText(), "Deposit Successful");
     }
 
     public void performWithdrawal(String withdrawalAmount) throws InterruptedException {
         Thread.sleep(1000);
         depositamount.sendKeys(withdrawalAmount);
-        Assert.assertEquals("Withdrawal Successful",successfulDeposit.getText());
+        Assert.assertEquals(successfulDeposit.getText(), "Withdrawal Successful");
     }
 
     public void clickPerformWithdrawButton() {
