@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import utils.Base;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -63,33 +61,17 @@ public class CustomerPage {
         customerDropDown.click();
     }
 
-
     public void click_yourName_dropDownList(String customerYourName){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[contains(@id,'userSelect')]")));
-//        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.(customerDropDown));
-
+        WebElement dropdown = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[contains(@id,'userSelect')]")));
         Select selectYourName = new Select(dropdown);
-
         selectYourName.selectByVisibleText("---Your Name---");
         List<WebElement> allOptions = selectYourName.getOptions();
-
-//        String customerYourName = "Harry Potter";
-
-        // Iterate the list using for loop
-
         for (WebElement allOption : allOptions) {
-
             if (allOption.getText().contains(customerYourName)) {
-
                 allOption.click();
-
                 System.out.println("clicked" + customerYourName);
-
                 break;
-
             }
-
         }
     }
 
