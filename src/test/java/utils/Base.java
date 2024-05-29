@@ -29,4 +29,10 @@ public class Base {
     public AccountPage getAccountPage() {
         return accountPage;
     }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    
 }
