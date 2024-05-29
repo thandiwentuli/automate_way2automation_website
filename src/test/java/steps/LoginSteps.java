@@ -1,11 +1,15 @@
 package steps;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.After;
 import io.cucumber.java.DataTableType;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterTest;
 import pages.CustomerPage;
 import utils.Base;
@@ -94,7 +98,7 @@ public class LoginSteps extends Base {
             accountPage.click_depositButton();
 
             //deposit amount
-            accountPage.checkBalance("0",depositAmount);
+            accountPage.checkBalance("0", depositAmount);
 
             accountPage.click_finalDepositButton();
 
@@ -109,14 +113,14 @@ public class LoginSteps extends Base {
 
     @And("User enters withdrawal amount")
     public void userEntersWithdrawalAmount(DataTable data) {
-        try{
+        try {
             List<Map<String, String>> rows = data.asMaps(String.class, String.class);
 
             for (Map<String, String> row : rows) {
                 String withdrawalAmount = row.get("WithdrawalAmount");
                 accountPage.performWithdrawal(withdrawalAmount);
             }
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -138,8 +142,16 @@ public class LoginSteps extends Base {
         accountPage.clickBackBtn();
     }
 
+    @After
+    public void addScreenshot(Scenario scenario) {
+        if (scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "image");
+        }
+    }
+
     @AfterTest
-    public void shutdownBrowser(){
+    public void shutdownBrowser() {
         driver.quit();
     }
 }
