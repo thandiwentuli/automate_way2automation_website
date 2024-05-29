@@ -33,4 +33,8 @@ public class BrowserFactory {
         driver.manage().deleteAllCookies();
         return driver;
     }
+
+    public static void closeBrowser(){
+        driver.quit();
+    }
 }

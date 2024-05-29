@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterTest;
 import pages.CustomerPage;
 import utils.Base;
+import utils.BrowserFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -152,6 +153,6 @@ public class LoginSteps extends Base {
 
     @After
     public void shutdownBrowser() {
-        driver.quit();
+        BrowserFactory.closeBrowser();
     }
 }
