@@ -209,8 +209,25 @@ public class AccountPage {
         backBtn.click();
     }
 
-    public void validateTransactions(){
-        //capture screenshots here...
+    public void validateTransactions(String balance){
+        var container = driver.findElement(By.className("borderM"));
+
+        if (container == null)
+            return;
+
+        var div = container.findElements(By.tagName("div"));
+
+        if (div == null)
+            return;
+
+        var strong = div.get(1).findElements(By.tagName("strong"));
+
+        if (strong == null)
+            return;
+
+        var currentBal = strong.get(1).getText();
+
+        Assert.assertEquals(currentBal, balance);
     }
 
     public void clickWithdrawalButton(){
@@ -221,4 +238,3 @@ public class AccountPage {
         logout.click();
     }
 }
-

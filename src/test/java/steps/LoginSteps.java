@@ -141,6 +141,7 @@ public class LoginSteps extends Base {
     public void validateThatWithdrawalAppearsUnderTheTransactionPage() {
         accountPage.openTransactions();
         accountPage.clickBackBtn();
+        accountPage.validateTransactions("0");
     }
 
     @After
