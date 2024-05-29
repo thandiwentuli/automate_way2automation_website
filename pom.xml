@@ -24,12 +24,6 @@
             <artifactId>cucumber-testng</artifactId>
             <version>7.17.0</version>
         </dependency>
-        <!--    <dependency>-->
-        <!--        <groupId>io.cucumber</groupId>-->
-        <!--        <artifactId>cucumber-junit</artifactId>-->
-        <!--        <version>7.17.0</version>-->
-        <!--        <scope>test</scope>-->
-        <!--    </dependency>-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
