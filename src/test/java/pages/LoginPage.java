@@ -8,22 +8,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Login {
-    public WebDriver driver;
-    @FindBy(xpath = "//button[@class='btn btn-primary btn-lg'][contains(.,'Customer Login')]")
-    WebElement customerLogin_xpath;
+public class LoginPage {
+    final WebDriver driver;
 
-    public Login(WebDriver driver) {
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-lg'][contains(.,'Customer Login')]")
+    WebElement customerLoginBtn;
+
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void verifyCustomerLogin() {
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(customerLogin_xpath));
-        customerLogin_xpath.isDisplayed();
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(customerLoginBtn));
+        customerLoginBtn.isDisplayed();
     }
 
     public void clickCustomerLoginButton() {
-        customerLogin_xpath.click();
+        customerLoginBtn.click();
     }
 
 }

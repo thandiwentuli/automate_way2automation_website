@@ -4,13 +4,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import pages.AccountPage;
 import pages.CustomerPage;
-import pages.Login;
-
-import static utils.BrowserFactory.driver;
+import pages.LoginPage;
 
 public class Base {
-    public final WebDriver driver = BrowserFactory.startBrowser("firefox", "https://www.way2automation.com/angularjs-protractor/banking/#/login");
-    public  Login login = PageFactory.initElements(driver, Login.class);
-    public CustomerPage customerPage = PageFactory.initElements(driver, CustomerPage.class);
-    public AccountPage accountPage = PageFactory.initElements(driver, AccountPage.class);
+    final WebDriver driver = BrowserFactory.startBrowser("firefox", "https://www.way2automation.com/angularjs-protractor/banking/#/login");
+    final LoginPage login;
+    final CustomerPage customerPage;
+    final AccountPage accountPage;
+
+    public Base(){
+        login = PageFactory.initElements(driver, LoginPage.class);
+        customerPage = PageFactory.initElements(driver, CustomerPage.class);
+        accountPage = PageFactory.initElements(driver, AccountPage.class);
+    }
+
+    public LoginPage getLogin() {
+        return login;
+    }
+
+    public CustomerPage getCustomerPage() {
+        return customerPage;
+    }
+
+    public AccountPage getAccountPage() {
+        return accountPage;
+    }
 }
