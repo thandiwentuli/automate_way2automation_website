@@ -140,15 +140,10 @@ public class AccountPage {
             transactionBtn.click();
             resetBtn.click();
             backBtn.click();
-            deposit.click();
-            setDepositamount("1500");
-
-        } else {
-            deposit.click();
-            setDepositamount("1500");
-
         }
 
+        deposit.click();
+        setDepositamount("1500");
     }
 
     public void checkBalance(String balance, String depositBalance) throws InterruptedException {
