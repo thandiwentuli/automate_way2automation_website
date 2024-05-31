@@ -86,6 +86,7 @@ public class AccountPage {
         var user = span.getText();
 
         Assert.assertEquals(customer, user);
+
     }
 
     public void selectAcc(String AccountNumber) {
